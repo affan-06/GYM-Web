@@ -1,0 +1,979 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeFlex Gym | Ultimate Fitness Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&family=Oswald:wght@600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for elements referenced in JavaScript */
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .class-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .nav-link.active {
+            color: #ff4757;
+        }
+        
+        /* Preloader animation */
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #ff4757;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">PRIMEFLEX</div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span>PRIME</span>
+                        <span>FLEX</span>
+                    </div>
+                </a>
+                
+                <input type="checkbox" id="menuToggle" class="menu-toggle-checkbox">
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#features" class="nav-link">
+                                <i class="fas fa-star"></i>
+                                <span>Features</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">
+                                <i class="fas fa-info-circle"></i>
+                                <span>About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#classes" class="nav-link">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Classes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#trainers" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Trainers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#membership" class="nav-link">
+                                <i class="fas fa-crown"></i>
+                                <span>Membership</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#testimonials" class="nav-link">
+                                <i class="fas fa-comments"></i>
+                                <span>Testimonials</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-cta">
+                        <a href="#membership" class="btn btn-primary">
+                            <i class="fas fa-bolt"></i>
+                            <span>Join Now</span>
+                        </a>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <label for="menuToggle" class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section-padding" id="home">
+        <div class="hero-background">
+            <div class="hero-bg-shape"></div>
+            <div class="hero-bg-shape"></div>
+            <div class="hero-bg-shape"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <i class="fas fa-bolt"></i>
+                            <span>Transform Your Life Today</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            BUILD YOUR <span class="text-gradient">ULTIMATE</span> PHYSIQUE
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Join the most advanced fitness community with state-of-the-art equipment, 
+                            expert trainers, and scientifically proven programs. Transform your body 
+                            and mind in our world-class facility.
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#membership" class="btn btn-primary animate-pulse-glow">
+                                <i class="fas fa-play"></i>
+                                <span>Start Free Trial</span>
+                            </a>
+                            <a href="#classes" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                <span>View Classes</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-image">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Fitness Training" class="hero-img">
+                        </div>
+                        
+                        <div class="floating-stats">
+                            <div class="floating-card">
+                                <i class="fas fa-users"></i>
+                                <h4>2500+</h4>
+                                <p>Active Members</p>
+                            </div>
+                            <div class="floating-card">
+                                <i class="fas fa-trophy"></i>
+                                <h4>50+</h4>
+                                <p>Fitness Awards</p>
+                            </div>
+                            <div class="floating-card">
+                                <i class="fas fa-user-shield"></i>
+                                <h4>25+</h4>
+                                <p>Expert Trainers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section-padding" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Why Choose PrimeFlex</h6>
+                <h2 class="section-title">PREMIUM <span class="text-gradient">FEATURES</span></h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Access</h3>
+                    <p>Workout on your schedule with 24/7 access to our state-of-the-art facility.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Modern Equipment</h3>
+                    <p>Train with the latest fitness equipment from world-renowned brands.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Group Training</h3>
+                    <p>Join high-energy group classes led by certified fitness instructors.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health Monitoring</h3>
+                    <p>Track your progress with advanced health and fitness monitoring systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Our Story</h6>
+                <h2 class="section-title">WHY <span class="text-gradient">PRIMEFLEX</span></h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Gym Interior" class="about-img">
+                        <div class="experience-badge">
+                            <span class="years">15+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Transforming Lives Through Fitness Excellence</h3>
+                    <p>
+                        PrimeFlex Gym is more than just a fitness center - it's a community dedicated 
+                        to helping individuals achieve their health and wellness goals through innovative 
+                        programs and world-class facilities.
+                    </p>
+                    
+                    <div class="about-list">
+                        <div class="list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Personalized training programs</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Nutrition planning and counseling</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Recovery and wellness facilities</span>
+                        </div>
+                        <div class="list-item">
+                            <i class="fas fa-check"></i>
+                            <span>Community events and challenges</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bars">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Equipment Quality</span>
+                                <span class="progress-value">98%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Trainer Expertise</span>
+                                <span class="progress-value">96%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 96%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Member Satisfaction</span>
+                                <span class="progress-value">97%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 97%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section class="classes section-padding" id="classes">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Workout Programs</h6>
+                <h2 class="section-title">FITNESS <span class="text-gradient">CLASSES</span></h2>
+            </div>
+            
+            <div class="classes-filter">
+                <input type="radio" id="filter-all" name="class-filter" checked>
+                <label for="filter-all" class="filter-btn filter-label active">All</label>
+                
+                <input type="radio" id="filter-strength" name="class-filter">
+                <label for="filter-strength" class="filter-btn filter-label">Strength</label>
+                
+                <input type="radio" id="filter-cardio" name="class-filter">
+                <label for="filter-cardio" class="filter-btn filter-label">Cardio</label>
+                
+                <input type="radio" id="filter-mind" name="class-filter">
+                <label for="filter-mind" class="filter-btn filter-label">Mind & Body</label>
+                
+                <input type="radio" id="filter-hiit" name="class-filter">
+                <label for="filter-hiit" class="filter-btn filter-label">HIIT</label>
+            </div>
+            
+            <div class="classes-grid">
+                <!-- Strength Classes -->
+                <div class="class-card" data-category="strength">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Powerlifting">
+                        <span class="class-category">Strength</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Powerlifting</h3>
+                        <p>
+                            Build maximum strength with our powerlifting program focusing on 
+                            squat, bench press, and deadlift techniques.
+                        </p>
+                        <div class="class-meta">
+                            <div class="class-time">
+                                <i class="far fa-clock"></i>
+                                <span>7:00 AM</span>
+                            </div>
+                            <div class="class-trainer">
+                                <i class="fas fa-user"></i>
+                                <span>Michael Stone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cardio Classes -->
+                <div class="class-card" data-category="cardio">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Spin Class">
+                        <span class="class-category">Cardio</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Spin Class</h3>
+                        <p>
+                            High-energy indoor cycling class with motivating music and 
+                            challenging interval training.
+                        </p>
+                        <div class="class-meta">
+                            <div class="class-time">
+                                <i class="far fa-clock"></i>
+                                <span>6:00 PM</span>
+                            </div>
+                            <div class="class-trainer">
+                                <i class="fas fa-user"></i>
+                                <span>Lisa Martinez</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mind & Body Classes -->
+                <div class="class-card" data-category="mind">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Yoga Flow">
+                        <span class="class-category">Mind & Body</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Yoga Flow</h3>
+                        <p>
+                            Improve flexibility and mindfulness with our Vinyasa flow 
+                            yoga classes for all levels.
+                        </p>
+                        <div class="class-meta">
+                            <div class="class-time">
+                                <i class="far fa-clock"></i>
+                                <span>8:00 AM</span>
+                            </div>
+                            <div class="class-trainer">
+                                <i class="fas fa-user"></i>
+                                <span>Sarah Johnson</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HIIT Classes -->
+                <div class="class-card" data-category="hiit">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="HIIT Circuit">
+                        <span class="class-category">HIIT</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>HIIT Circuit</h3>
+                        <p>
+                            High-intensity interval training for maximum calorie burn 
+                            and cardiovascular fitness.
+                        </p>
+                        <div class="class-meta">
+                            <div class="class-time">
+                                <i class="far fa-clock"></i>
+                                <span>5:30 PM</span>
+                            </div>
+                            <div class="class-trainer">
+                                <i class="fas fa-user"></i>
+                                <span>David Chen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="trainers section-padding" id="trainers">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Expert Guidance</h6>
+                <h2 class="section-title">OUR <span class="text-gradient">TRAINERS</span></h2>
+            </div>
+            
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Michael Stone">
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Michael Stone</h3>
+                        <p class="trainer-specialty">Strength & Conditioning</p>
+                        <p class="trainer-bio">
+                            12+ years experience in powerlifting and strength training. 
+                            Certified strength coach with multiple competition wins.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Sarah Johnson">
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="trainer-specialty">Yoga & Mobility</p>
+                        <p class="trainer-bio">
+                            Certified yoga instructor with 8 years experience focusing on 
+                            mobility, recovery, and mindfulness practices.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-img">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="David Chen">
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>David Chen</h3>
+                        <p class="trainer-specialty">HIIT & CrossFit</p>
+                        <p class="trainer-bio">
+                            Competitive CrossFit athlete and certified HIIT specialist 
+                            with 10+ years of coaching experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership section-padding" id="membership">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Join Today</h6>
+                <h2 class="section-title">MEMBERSHIP <span class="text-gradient">PLANS</span></h2>
+            </div>
+            
+            <div class="membership-grid">
+                <div class="membership-card">
+                    <div class="membership-header">
+                        <h3>Basic</h3>
+                        <div class="price">$29<span>/month</span></div>
+                    </div>
+                    <ul class="membership-features">
+                        <li><i class="fas fa-check"></i> Gym Access</li>
+                        <li><i class="fas fa-check"></i> Locker Room</li>
+                        <li><i class="fas fa-times"></i> Group Classes</li>
+                        <li><i class="fas fa-times"></i> Personal Training</li>
+                        <li><i class="fas fa-times"></i> Recovery Suite</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Choose Plan</a>
+                </div>
+                
+                <div class="membership-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="membership-header">
+                        <h3>Pro</h3>
+                        <div class="price">$59<span>/month</span></div>
+                    </div>
+                    <ul class="membership-features">
+                        <li><i class="fas fa-check"></i> Everything in Basic</li>
+                        <li><i class="fas fa-check"></i> Unlimited Group Classes</li>
+                        <li><i class="fas fa-check"></i> 2 Personal Training Sessions</li>
+                        <li><i class="fas fa-check"></i> Recovery Suite Access</li>
+                        <li><i class="fas fa-check"></i> Nutrition Consultation</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Choose Plan</a>
+                </div>
+                
+                <div class="membership-card">
+                    <div class="membership-header">
+                        <h3>Elite</h3>
+                        <div class="price">$99<span>/month</span></div>
+                    </div>
+                    <ul class="membership-features">
+                        <li><i class="fas fa-check"></i> Everything in Pro</li>
+                        <li><i class="fas fa-check"></i> Unlimited Personal Training</li>
+                        <li><i class="fas fa-check"></i> 24/7 Access</li>
+                        <li><i class="fas fa-check"></i> VIP Locker</li>
+                        <li><i class="fas fa-check"></i> Custom Meal Plans</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Success Stories</h6>
+                <h2 class="section-title">MEMBER <span class="text-gradient">TESTIMONIALS</span></h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>
+                            "PrimeFlex transformed my life! Lost 45lbs in 4 months with their 
+                            personalized program and supportive community."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson">
+                        <div>
+                            <h4>James Wilson</h4>
+                            <p>Member for 2 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>
+                            "The trainers are exceptional! They push you to be your best while 
+                            ensuring proper form and technique."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lisa Martinez">
+                        <div>
+                            <h4>Lisa Martinez</h4>
+                            <p>Member for 1 year</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>
+                            "Best equipment and facilities in town. The 24/7 access is perfect 
+                            for my busy schedule."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert Chen">
+                        <div>
+                            <h4>Robert Chen</h4>
+                            <p>Member for 3 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h6 class="section-subtitle">Get Started</h6>
+                <h2 class="section-title">START YOUR <span class="text-gradient">JOURNEY</span></h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>GET YOUR <span class="text-gradient">FREE TRIAL</span></h2>
+                    <p>
+                        Ready to transform your body and mind? Get 7 days free trial at 
+                        PrimeFlex Gym with full access to all facilities.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>123 Fitness Avenue, Health City, HC 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>info@primeflexgym.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Mon-Fri: 5am-11pm<br>Sat-Sun: 6am-10pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Select Membership Plan</option>
+                                <option value="basic">Basic - $29/month</option>
+                                <option value="pro">Pro - $59/month</option>
+                                <option value="elite">Elite - $99/month</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-bolt"></i>
+                            <span>Claim Free Trial</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span>PRIME</span>
+                            <span>FLEX</span>
+                        </div>
+                    </a>
+                    <p>
+                        Transform your body, transform your life. Join the PrimeFlex 
+                        community today and start your fitness journey.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#trainers">Trainers</a></li>
+                        <li><a href="#membership">Membership</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Classes</h4>
+                    <ul>
+                        <li><a href="#classes">Strength Training</a></li>
+                        <li><a href="#classes">Yoga</a></li>
+                        <li><a href="#classes">HIIT</a></li>
+                        <li><a href="#classes">CrossFit</a></li>
+                        <li><a href="#classes">Spin Class</a></li>
+                        <li><a href="#classes">Boxing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get fitness tips, workout plans, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2023 PrimeFlex Gym. All rights reserved. | 
+                    Designed with <i class="fas fa-heart"></i> for fitness enthusiasts
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript moved from style tag to script tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }, 2000);
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // Mobile menu functionality
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992) {
+                        menuToggle.checked = false;
+                    }
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We will contact you within 24 hours to schedule your free trial.');
+                    this.reset();
+                });
+            }
+
+            // Newsletter subscription
+            const newsletterButton = document.querySelector('.newsletter button');
+            if (newsletterButton) {
+                newsletterButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const input = this.parentElement.querySelector('input');
+                    if (input.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        input.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+
+            // CSS-only class filtering enhancement
+            const filterInputs = document.querySelectorAll('.classes-filter input[type="radio"]');
+            filterInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const category = this.id.replace('filter-', '');
+                    const classCards = document.querySelectorAll('.class-card');
+                    
+                    classCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
